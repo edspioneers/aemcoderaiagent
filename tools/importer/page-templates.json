@@ -1,0 +1,30 @@
+{
+  "templates": [
+    {
+      "name": "Waters Home Page",
+      "urls": ["https://www.waters.com/nextgen/us/en.html"],
+      "description": "Main home page template with hero banner, feature cards, news links, product/application columns, shop section, purchasing steps, action cards, and customer testimonial.",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [".cmp-container__background-image + .cmp-container__wrapper"]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".layoutcontainer .feature-well",
+            ".cmp-links__item.primary a[href*='shop']",
+            "[class*='wotd'] .cmp-list"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".products-and-services + .applications",
+            ".testimonial-video + .testimonial-quote"
+          ]
+        }
+      ]
+    }
+  ]
+}

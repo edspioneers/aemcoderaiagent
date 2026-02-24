@@ -1,0 +1,65 @@
+{
+  "source": {
+    "domain": "https://www.waters.com",
+    "basePath": "/nextgen"
+  },
+  "target": {
+    "contentDir": "content",
+    "blocksDir": "blocks"
+  },
+  "blockMapping": {
+    "hero": {
+      "selectors": [".cmp-container:has(.cmp-container__background-image)"],
+      "edsBlock": "hero",
+      "structure": {
+        "row1": "background-image",
+        "row2": "eyebrow + heading + cta"
+      }
+    },
+    "feature-cards": {
+      "selectors": [".feature-well, .cmp-promowell"],
+      "edsBlock": "cards",
+      "structure": {
+        "col1": "image",
+        "col2": "title + description + cta"
+      }
+    },
+    "link-columns": {
+      "selectors": [".cmp-links--h3.utility"],
+      "edsBlock": "columns",
+      "structure": {
+        "col1": "heading + link-list",
+        "col2": "heading + link-list"
+      }
+    },
+    "action-cards": {
+      "selectors": [".cmp-list:has(img)"],
+      "edsBlock": "cards",
+      "structure": {
+        "col1": "title-link"
+      }
+    },
+    "testimonial": {
+      "selectors": [".testimonial, blockquote"],
+      "edsBlock": "columns",
+      "structure": {
+        "col1": "video-image-link",
+        "col2": "quote + attribution"
+      }
+    }
+  },
+  "metadata": {
+    "extract": ["title", "description", "keywords", "canonical"],
+    "selectors": {
+      "title": "title",
+      "description": "meta[name='description']",
+      "keywords": "meta[name='keywords']",
+      "canonical": "link[rel='canonical']"
+    }
+  },
+  "skipElements": [
+    "header", "footer", "nav",
+    "[class*='onetrust']", "[id*='onetrust']",
+    "script", "style", "noscript"
+  ]
+}
